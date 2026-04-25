@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us – The Grand Ivory</title>
+  <meta name="description" content="Get in touch with The Grand Ivory. Reach us by phone, email, or visit us in person. We're here to assist with reservations and inquiries." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== PRELOADER ========== -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__spinner"></div>
+    <p class="preloader__text">The Grand Ivory</p>
+  </div>
+
+  <!-- ========== CURSOR GLOW ========== -->
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+  <!-- ========== TOAST CONTAINER ========== -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar__logo">
+        <span class="navbar__logo-icon">🏨</span>
+        The Grand Ivory
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="navbar__links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="booking.html">Book a Room</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="cancellation.html">Cancellation Policy</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== CONTACT PAGE ========== -->
+  <main class="contact-page">
+    <div class="container">
+
+      <!-- Page Header -->
+      <div class="contact-page__header reveal">
+        <div class="hero__badge" style="margin-bottom:1rem;">📞 Get In Touch</div>
+        <h1 class="hero__title" style="font-size:clamp(1.8rem,4vw,2.8rem);">
+          Contact <span>Us</span>
+        </h1>
+        <p style="color:var(--text-secondary); margin-top:0.6rem; max-width:550px; margin-left:auto; margin-right:auto;">
+          Have questions or need assistance? Our team is available around the clock to help you.
+        </p>
+      </div>
+
+      <!-- ===== CONTACT INFO CARDS ===== -->
+      <div class="contact-cards stagger-children">
+        <div class="glass-card contact-info-card reveal">
+          <div class="contact-info-card__icon">📍</div>
+          <h3 class="contact-info-card__title">Visit Us</h3>
+          <p class="contact-info-card__text">42 Marine Drive, Colaba<br>Mumbai, Maharashtra 400001<br>India</p>
+        </div>
+
+        <div class="glass-card contact-info-card reveal">
+          <div class="contact-info-card__icon">📞</div>
+          <h3 class="contact-info-card__title">Call Us</h3>
+          <p class="contact-info-card__text">
+            Reservations: <strong>+91 22 6789 1234</strong><br>
+            Front Desk: <strong>+91 22 6789 5678</strong><br>
+            Toll-Free: <strong>1800-123-IVORY</strong>
+          </p>
+        </div>
+
+        <div class="glass-card contact-info-card reveal">
+          <div class="contact-info-card__icon">📧</div>
+          <h3 class="contact-info-card__title">Email Us</h3>
+          <p class="contact-info-card__text">
+            General: <strong>info@grandivory.com</strong><br>
+            Bookings: <strong>reservations@grandivory.com</strong><br>
+            Events: <strong>events@grandivory.com</strong>
+          </p>
+        </div>
+
+        <div class="glass-card contact-info-card reveal">
+          <div class="contact-info-card__icon">🕐</div>
+          <h3 class="contact-info-card__title">Working Hours</h3>
+          <p class="contact-info-card__text">
+            Front Desk: <strong>24/7</strong><br>
+            Reservations: <strong>8 AM – 10 PM</strong><br>
+            Concierge: <strong>6 AM – 12 AM</strong>
+          </p>
+        </div>
+      </div>
+
+      <!-- ===== CONTACT FORM + MAP ===== -->
+      <div class="contact-layout">
+
+        <!-- Contact Form -->
+        <div class="glass-card contact-form-card reveal-left">
+          <h2 class="form-section__title">
+            <span class="icon">✉️</span> Send Us a Message
+          </h2>
+
+          <form id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name">Your Name <span class="required">*</span></label>
+                <input type="text" id="contact-name" class="form-input" placeholder="e.g. Priya Sharma" required />
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email Address <span class="required">*</span></label>
+                <input type="email" id="contact-email" class="form-input" placeholder="e.g. priya@email.com" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-phone">Phone Number</label>
+                <input type="tel" id="contact-phone" class="form-input" placeholder="e.g. 9876543210" maxlength="10" />
+              </div>
+              <div class="form-group">
+                <label for="contact-subject">Subject <span class="required">*</span></label>
+                <select id="contact-subject" class="form-input" required>
+                  <option value="" disabled selected>Select a topic</option>
+                  <option value="reservation">Reservation Inquiry</option>
+                  <option value="feedback">Feedback / Compliment</option>
+                  <option value="complaint">Complaint</option>
+                  <option value="event">Event / Banquet Inquiry</option>
+                  <option value="partnership">Partnership / Corporate</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message">Message <span class="required">*</span></label>
+              <textarea id="contact-message" class="form-textarea" placeholder="Write your message here..." rows="5" required></textarea>
+            </div>
+
+            <div style="text-align:center; margin-top:1rem;">
+              <button type="submit" class="btn btn-primary btn-lg" id="contact-submit-btn">
+                📤 Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Map -->
+        <div class="contact-map-card reveal-right">
+          <div class="location__map" style="height:100%; min-height:400px;">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.0228655459!2d72.8226!3d18.9442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDU2JzM5LjEiTiA3MsKwNDknMjEuNCJF!5e0!3m2!1sen!2sin!4v1700000000000"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="The Grand Ivory Location"
+            ></iframe>
+          </div>
+
+          <!-- Social Links -->
+          <div class="contact-social reveal" style="margin-top:1.5rem;">
+            <h3 style="font-family:'Inter',sans-serif; font-size:0.95rem; font-weight:600; color:var(--gold); margin-bottom:0.8rem;">Follow Us</h3>
+            <div class="footer__social" style="justify-content:flex-start; font-size:1.5rem;">
+              <a href="#" aria-label="Facebook">📘</a>
+              <a href="#" aria-label="Instagram">📸</a>
+              <a href="#" aria-label="Twitter">🐦</a>
+              <a href="#" aria-label="YouTube">🎥</a>
+              <a href="#" aria-label="LinkedIn">💼</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== QUICK FAQ ===== -->
+      <div class="contact-faq reveal" style="margin-top:4rem;">
+        <div class="section-header">
+          <p class="section-header__label">Quick Answers</p>
+          <h2 class="section-header__title">Common Contact Questions</h2>
+        </div>
+
+        <div class="faq__list" id="faq-list">
+          <div class="faq-item" data-faq>
+            <button class="faq-item__question">
+              How quickly do you respond to emails?
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <div class="faq-item__answer-inner">
+                We aim to respond to all email inquiries within 2–4 business hours during working hours (8 AM – 10 PM IST). For urgent matters, we recommend calling our front desk directly at +91 22 6789 1234.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" data-faq>
+            <button class="faq-item__question">
+              Can I book a room over the phone?
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <div class="faq-item__answer-inner">
+                Absolutely! Our reservations team is available from 8 AM to 10 PM IST. Call us at +91 22 6789 1234 or our toll-free number 1800-123-IVORY to make a booking, inquire about availability, or customize your stay.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" data-faq>
+            <button class="faq-item__question">
+              Do you offer corporate or group booking rates?
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <div class="faq-item__answer-inner">
+                Yes, we offer special rates for corporate stays, group bookings, and long-term guests. Please email <strong>events@grandivory.com</strong> with your requirements for a customized quote. Discounts of up to 25% are available for groups of 10+ rooms.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__brand">🏨 The Grand Ivory</p>
+      <ul class="footer__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="booking.html">Book a Room</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="cancellation.html">Cancellation Policy</a></li>
+      </ul>
+      <p>&copy; 2026 The Grand Ivory Hotel & Resorts. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ========== BACK TO TOP ========== -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // --- Preloader ---
+      window.addEventListener('load', () => {
+        setTimeout(() => document.getElementById('preloader').classList.add('hidden'), 600);
+      });
+      setTimeout(() => document.getElementById('preloader').classList.add('hidden'), 3000);
+
+      // --- Cursor Glow ---
+      const cursorGlow = document.getElementById('cursor-glow');
+      if (window.matchMedia('(hover: hover)').matches) {
+        document.addEventListener('mousemove', (e) => {
+          cursorGlow.style.left = e.clientX + 'px';
+          cursorGlow.style.top  = e.clientY + 'px';
+        });
+      }
+
+      // --- Hamburger ---
+      const hamburger = document.getElementById('hamburger');
+      const navLinks  = document.getElementById('nav-links');
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('open');
+      });
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          navLinks.classList.remove('open');
+        });
+      });
+
+      // --- Scroll Reveal ---
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('revealed');
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+        revealObserver.observe(el);
+      });
+
+      // --- Back to Top ---
+      const backToTop = document.getElementById('back-to-top');
+      window.addEventListener('scroll', () => {
+        backToTop.classList.toggle('visible', window.scrollY > 400);
+      });
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // --- FAQ Accordion ---
+      document.querySelectorAll('[data-faq]').forEach(item => {
+        const btn = item.querySelector('.faq-item__question');
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('[data-faq]').forEach(other => {
+            if (other !== item) other.classList.remove('active');
+          });
+          item.classList.toggle('active');
+        });
+      });
+
+      // --- Toast System ---
+      const toastContainer = document.getElementById('toast-container');
+      function showToast(message, type = 'info', duration = 3500) {
+        const icons = { success: '✅', error: '❌', info: 'ℹ️' };
+        const toast = document.createElement('div');
+        toast.className = `toast toast--${type}`;
+        toast.innerHTML = `<span class="toast__icon">${icons[type]}</span><span class="toast__msg">${message}</span>`;
+        toastContainer.appendChild(toast);
+        setTimeout(() => {
+          toast.classList.add('toast--exit');
+          setTimeout(() => toast.remove(), 400);
+        }, duration);
+      }
+
+      // --- Contact Form ---
+      const contactForm = document.getElementById('contact-form');
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name    = document.getElementById('contact-name').value.trim();
+        const email   = document.getElementById('contact-email').value.trim();
+        const subject = document.getElementById('contact-subject').value;
+        const message = document.getElementById('contact-message').value.trim();
+
+        if (!name || !email || !subject || !message) {
+          showToast('Please fill in all required fields', 'error');
+          return;
+        }
+
+        if (!email.includes('@') || !email.includes('.')) {
+          showToast('Please enter a valid email address', 'error');
+          return;
+        }
+
+        // Simulate sending
+        const btn = document.getElementById('contact-submit-btn');
+        btn.textContent = '⏳ Sending...';
+        btn.disabled = true;
+
+        setTimeout(() => {
+          showToast('Message sent successfully! We\'ll get back to you soon.', 'success', 5000);
+          btn.textContent = '✅ Sent!';
+          contactForm.reset();
+
+          setTimeout(() => {
+            btn.textContent = '📤 Send Message';
+            btn.disabled = false;
+          }, 3000);
+        }, 1500);
+      });
+
+    });
+  </script>
+
+</body>
+</html>

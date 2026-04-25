@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Grand Ivory – Luxury Hotel & Resort Booking</title>
+  <meta name="description" content="Book your dream stay at The Grand Ivory. Luxury suites, world-class amenities, and unforgettable experiences await you." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== PRELOADER ========== -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__spinner"></div>
+    <p class="preloader__text">The Grand Ivory</p>
+  </div>
+
+  <!-- ========== CURSOR GLOW ========== -->
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar__logo">
+        <span class="navbar__logo-icon">🏨</span>
+        The Grand Ivory
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="navbar__links" id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#rooms">Rooms</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cancellation.html">Policies</a></li>
+        <li><a href="booking.html" class="btn btn-primary" style="padding:0.5rem 1.4rem;font-size:0.88rem;">Reserve Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="hero">
+    <canvas id="particles-canvas"></canvas>
+    <div class="hero__decor hero__decor--1"></div>
+    <div class="hero__decor hero__decor--2"></div>
+
+    <div class="hero__content">
+      <div class="hero__badge">⭐ Five-Star Luxury Experience</div>
+
+      <h1 class="hero__title">
+        Where Elegance<br />Meets <span id="typing-target">Comfort</span><span class="typing-cursor"></span>
+      </h1>
+
+      <p class="hero__subtitle">
+        Discover unmatched luxury at The Grand Ivory. Breathtaking views,
+        world-class cuisine, and timeless hospitality — all crafted for you.
+      </p>
+
+      <div class="hero__actions">
+        <a href="booking.html" class="btn btn-primary btn-lg" id="hero-book-btn">🛎️ Book Your Stay</a>
+        <a href="#rooms" class="btn btn-secondary btn-lg" id="hero-explore-btn">Explore Rooms</a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span class="scroll-indicator__text">Scroll Down</span>
+      <div class="scroll-indicator__arrow"></div>
+    </div>
+  </section>
+
+  <!-- ========== STATS COUNTER ========== -->
+  <section class="stats" id="stats">
+    <div class="container">
+      <div class="stats__grid stagger-children">
+        <div class="stat-card reveal">
+          <div class="stat-card__number" data-target="1500">0</div>
+          <div class="stat-card__label">Happy Guests</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-card__number" data-target="120">0</div>
+          <div class="stat-card__label">Luxury Rooms</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-card__number" data-target="15">0</div>
+          <div class="stat-card__label">Awards Won</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-card__number" data-target="98">0</div>
+          <div class="stat-card__label">Satisfaction %</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURES SECTION ========== -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-header__label">Why Choose Us</p>
+        <h2 class="section-header__title">An Experience Beyond Ordinary</h2>
+        <p class="section-header__desc">Every detail at The Grand Ivory is designed to exceed your expectations.</p>
+      </div>
+
+      <div class="features__grid stagger-children">
+        <div class="glass-card feature-card reveal">
+          <div class="feature-card__icon">🌊</div>
+          <h3 class="feature-card__title">Infinity Pool</h3>
+          <p class="feature-card__desc">Relax in our rooftop infinity pool with panoramic skyline views.</p>
+        </div>
+        <div class="glass-card feature-card reveal">
+          <div class="feature-card__icon">🍽️</div>
+          <h3 class="feature-card__title">Gourmet Dining</h3>
+          <p class="feature-card__desc">Savor international cuisine prepared by award-winning chefs.</p>
+        </div>
+        <div class="glass-card feature-card reveal">
+          <div class="feature-card__icon">🧖</div>
+          <h3 class="feature-card__title">Luxury Spa</h3>
+          <p class="feature-card__desc">Rejuvenate your mind and body with our premium spa treatments.</p>
+        </div>
+        <div class="glass-card feature-card reveal">
+          <div class="feature-card__icon">🛡️</div>
+          <h3 class="feature-card__title">24/7 Concierge</h3>
+          <p class="feature-card__desc">Dedicated staff ensuring every moment of your stay is perfect.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ========== ROOMS SECTION ========== -->
+  <section class="rooms" id="rooms">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-header__label">Our Rooms</p>
+        <h2 class="section-header__title">Handcrafted Luxury Stays</h2>
+        <p class="section-header__desc">Choose from our curated selection of rooms designed for ultimate comfort.</p>
+      </div>
+
+      <div class="rooms__grid stagger-children">
+        <!-- Standard -->
+        <div class="glass-card room-card reveal" id="room-card-standard">
+          <div class="room-card__image-wrap">
+            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80" alt="Standard Room" class="room-card__image" loading="lazy" />
+          </div>
+          <div class="room-card__body">
+            <p class="room-card__type">Classic</p>
+            <h3 class="room-card__name">Standard Room</h3>
+            <div class="room-card__stars">★★★★☆</div>
+            <p class="room-card__desc">Cozy and elegant, perfect for a comfortable getaway with all essential amenities.</p>
+            <div class="room-card__footer">
+              <p class="room-card__price">₹1,000 <span>/night</span></p>
+              <a href="booking.html" class="btn btn-primary" style="padding:0.5rem 1.2rem;font-size:0.85rem;">Book</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deluxe -->
+        <div class="glass-card room-card reveal" id="room-card-deluxe">
+          <div class="room-card__image-wrap">
+            <span class="room-card__badge room-card__badge--popular">★ Popular</span>
+            <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=600&q=80" alt="Deluxe Room" class="room-card__image" loading="lazy" />
+          </div>
+          <div class="room-card__body">
+            <p class="room-card__type">Premium</p>
+            <h3 class="room-card__name">Deluxe Room</h3>
+            <div class="room-card__stars">★★★★★</div>
+            <p class="room-card__desc">Spacious interiors with premium furnishings, a mini-bar, and a stunning city view.</p>
+            <div class="room-card__footer">
+              <p class="room-card__price">₹2,000 <span>/night</span></p>
+              <a href="booking.html" class="btn btn-primary" style="padding:0.5rem 1.2rem;font-size:0.85rem;">Book</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Suite -->
+        <div class="glass-card room-card reveal" id="room-card-suite">
+          <div class="room-card__image-wrap">
+            <span class="room-card__badge room-card__badge--new">✦ Exclusive</span>
+            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&q=80" alt="Suite Room" class="room-card__image" loading="lazy" />
+          </div>
+          <div class="room-card__body">
+            <p class="room-card__type">Exclusive</p>
+            <h3 class="room-card__name">Suite Room</h3>
+            <div class="room-card__stars">★★★★★</div>
+            <p class="room-card__desc">The pinnacle of luxury — private lounge, jacuzzi, and panoramic views.</p>
+            <div class="room-card__footer">
+              <p class="room-card__price">₹3,500 <span>/night</span></p>
+              <a href="booking.html" class="btn btn-primary" style="padding:0.5rem 1.2rem;font-size:0.85rem;">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ========== PHOTO GALLERY ========== -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-header__label">Gallery</p>
+        <h2 class="section-header__title">A Visual Tour</h2>
+        <p class="section-header__desc">Explore the beauty of The Grand Ivory through our curated photo collection.</p>
+      </div>
+
+      <div class="gallery__grid">
+        <div class="gallery__item gallery__item--wide gallery__item--tall reveal">
+          <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800&q=80" alt="Hotel Exterior at Dusk" loading="lazy" />
+          <div class="gallery__item-overlay"><span>🏨</span>Hotel Exterior</div>
+        </div>
+        <div class="gallery__item reveal">
+          <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=500&q=80" alt="Luxury Suite Interior" loading="lazy" />
+          <div class="gallery__item-overlay"><span>🛏️</span>Suite Interior</div>
+        </div>
+        <div class="gallery__item reveal">
+          <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=500&q=80" alt="Swimming Pool" loading="lazy" />
+          <div class="gallery__item-overlay"><span>🏊</span>Swimming Pool</div>
+        </div>
+        <div class="gallery__item reveal">
+          <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&q=80" alt="Hotel Lobby" loading="lazy" />
+          <div class="gallery__item-overlay"><span>🏛️</span>Grand Lobby</div>
+        </div>
+        <div class="gallery__item gallery__item--wide reveal">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="Fine Dining Restaurant" loading="lazy" />
+          <div class="gallery__item-overlay"><span>🍷</span>Fine Dining</div>
+        </div>
+        <div class="gallery__item reveal">
+          <img src="https://images.unsplash.com/photo-1540555700478-4be289fbec6e?w=500&q=80" alt="Spa Treatment Room" loading="lazy" />
+          <div class="gallery__item-overlay"><span>🧖</span>Spa & Wellness</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ========== SPECIAL OFFERS / PACKAGES ========== -->
+  <section class="packages" id="packages">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-header__label">Special Offers</p>
+        <h2 class="section-header__title">Curated Stay Packages</h2>
+        <p class="section-header__desc">Exclusive bundles designed to make your stay even more memorable.</p>
+      </div>
+
+      <div class="packages__grid stagger-children">
+        <!-- Weekend Getaway -->
+        <div class="glass-card package-card reveal">
+          <div class="package-card__icon">🌙</div>
+          <h3 class="package-card__name">Weekend Getaway</h3>
+          <div class="package-card__price">₹4,999 <span>/person</span></div>
+          <p class="package-card__duration">2 Nights / 3 Days</p>
+          <ul class="package-card__features">
+            <li><span>✅</span> Standard Room (2 nights)</li>
+            <li><span>✅</span> Complimentary Breakfast</li>
+            <li><span>✅</span> Free WiFi</li>
+            <li><span>✅</span> Late Checkout (2 PM)</li>
+            <li class="disabled"><span>❌</span> Spa Access</li>
+            <li class="disabled"><span>❌</span> Airport Transfer</li>
+          </ul>
+          <a href="booking.html" class="btn btn-secondary" style="width:100%;">Choose Plan</a>
+        </div>
+
+        <!-- Royal Retreat (Featured) -->
+        <div class="glass-card package-card package-card--featured reveal">
+          <div class="package-card__badge">Most Popular</div>
+          <div class="package-card__icon">👑</div>
+          <h3 class="package-card__name">Royal Retreat</h3>
+          <div class="package-card__price">₹12,999 <span>/person</span></div>
+          <p class="package-card__duration">3 Nights / 4 Days</p>
+          <ul class="package-card__features">
+            <li><span>✅</span> Deluxe Room (3 nights)</li>
+            <li><span>✅</span> All Meals Included</li>
+            <li><span>✅</span> Free WiFi + AC</li>
+            <li><span>✅</span> Spa & Pool Access</li>
+            <li><span>✅</span> Welcome Drink on Arrival</li>
+            <li><span>✅</span> Airport Transfer</li>
+          </ul>
+          <a href="booking.html" class="btn btn-primary" style="width:100%;">Choose Plan</a>
+        </div>
+
+        <!-- Honeymoon Suite -->
+        <div class="glass-card package-card reveal">
+          <div class="package-card__icon">💎</div>
+          <h3 class="package-card__name">Honeymoon Suite</h3>
+          <div class="package-card__price">₹24,999 <span>/couple</span></div>
+          <p class="package-card__duration">5 Nights / 6 Days</p>
+          <ul class="package-card__features">
+            <li><span>✅</span> Suite Room (5 nights)</li>
+            <li><span>✅</span> Full Board + Room Service</li>
+            <li><span>✅</span> Couple's Spa Treatment</li>
+            <li><span>✅</span> Candlelight Dinner</li>
+            <li><span>✅</span> Private Pool Access</li>
+            <li><span>✅</span> Luxury Airport Pickup</li>
+          </ul>
+          <a href="booking.html" class="btn btn-secondary" style="width:100%;">Choose Plan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ========== AMENITIES SHOWCASE ========== -->
+  <section class="amenities-showcase" id="amenities-showcase">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-header__label">Hotel Amenities</p>
+        <h2 class="section-header__title">Everything You Need & More</h2>
+        <p class="section-header__desc">A world of comfort and convenience at your fingertips.</p>
+      </div>
+
+      <div class="amenities-showcase__grid stagger-children">
+        <div class="amenity-showcase-card reveal">
+          <span class="amenity-showcase-card__icon">❄️</span>
+          <p class="amenity-showcase-card__name">Climate Control</p>
+          <p class="amenity-showcase-card__desc">In-room AC & heating</p>
+        </div>
+        <div class="amenity-showcase-card reveal">
+          <span class="amenity-showcase-card__icon">📶</span>
+          <p class="amenity-showcase-card__name">High-Speed WiFi</p>
+          <p class="amenity-showcase-card__desc">500 Mbps throughout</p>
+        </div>
+        <div class="amenity-showcase-card reveal">
+          <span class="amenity-showcase-card__icon">🍳</span>
+          <p class="amenity-showcase-card__name">Breakfast Buffet</p>
+          <p class="amenity-showcase-card__desc">Continental & Indian</p>
+        </div>
+        <div class="amenity-showcase-card reveal">
+          <span class="amenity-showcase-card__icon">🅿️</span>
+          <p class="amenity-showcase-card__name">Valet Parking</p>
+          <p class="amenity-showcase-card__desc">Secured basement lot</p>
+        </div>
+        <div class="amenity-showcase-card reveal">
+          <span class="amenity-showcase-card__icon">🏊</span>
+          <p class="amenity-showcase-card__name">Swimming Pool</p>
+          <p class="amenity-showcase-card__desc">Rooftop infinity pool</p>
+        </div>
+        <div class="amenity-showcase-card reveal">
+          <span class="amenity-showcase-card__icon">🏋️</span>
+          <p class="amenity-showcase-card__name">Fitness Center</p>
+          <p class="amenity-showcase-card__desc">24/7 equipped gym</p>
+        </div>
+        <div class="amenity-showcase-card reveal">
+          <span class="amenity-showcase-card__icon">👶</span>
+          <p class="amenity-showcase-card__name">Kids Play Area</p>
+          <p class="amenity-showcase-card__desc">Indoor playground</p>
+        </div>
+        <div class="amenity-showcase-card reveal">
+          <span class="amenity-showcase-card__icon">🧹</span>
+          <p class="amenity-showcase-card__name">Housekeeping</p>
+          <p class="amenity-showcase-card__desc">Twice daily service</p>
+        </div>
+        <div class="amenity-showcase-card reveal">
+          <span class="amenity-showcase-card__icon">🛒</span>
+          <p class="amenity-showcase-card__name">Room Service</p>
+          <p class="amenity-showcase-card__desc">Available 24/7</p>
+        </div>
+        <div class="amenity-showcase-card reveal">
+          <span class="amenity-showcase-card__icon">🎤</span>
+          <p class="amenity-showcase-card__name">Event Hall</p>
+          <p class="amenity-showcase-card__desc">500+ capacity</p>
+        </div>
+        <div class="amenity-showcase-card reveal">
+          <span class="amenity-showcase-card__icon">🔒</span>
+          <p class="amenity-showcase-card__name">In-Room Safe</p>
+          <p class="amenity-showcase-card__desc">Digital locker</p>
+        </div>
+        <div class="amenity-showcase-card reveal">
+          <span class="amenity-showcase-card__icon">🚐</span>
+          <p class="amenity-showcase-card__name">Airport Shuttle</p>
+          <p class="amenity-showcase-card__desc">Complimentary transfer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-header__label">Guest Reviews</p>
+        <h2 class="section-header__title">What Our Guests Say</h2>
+        <p class="section-header__desc">Real stories from guests who made The Grand Ivory their home away from home.</p>
+      </div>
+
+      <div class="testimonials__slider reveal-scale" id="testimonial-slider">
+        <div class="testimonials__track" id="testimonial-track">
+          <div class="glass-card testimonial-card">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Sharma" class="testimonial-card__avatar" />
+            <p class="testimonial-card__quote">An absolutely magical stay! The suite was breathtaking, the staff was incredibly warm, and the spa was pure bliss. We'll definitely be returning.</p>
+            <p class="testimonial-card__name">Priya Sharma</p>
+            <p class="testimonial-card__role">Business Executive, Mumbai</p>
+          </div>
+          <div class="glass-card testimonial-card">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Arjun Patel" class="testimonial-card__avatar" />
+            <p class="testimonial-card__quote">From the moment we walked in, we were treated like royalty. The rooftop pool at sunset is something you must experience at least once in your life.</p>
+            <p class="testimonial-card__name">Arjun Patel</p>
+            <p class="testimonial-card__role">Travel Blogger, Delhi</p>
+          </div>
+          <div class="glass-card testimonial-card">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Meera Reddy" class="testimonial-card__avatar" />
+            <p class="testimonial-card__quote">The Grand Ivory redefined luxury for me. The attention to detail in every corner of the hotel is astounding. Five stars all the way!</p>
+            <p class="testimonial-card__name">Meera Reddy</p>
+            <p class="testimonial-card__role">Interior Designer, Bangalore</p>
+          </div>
+          <div class="glass-card testimonial-card">
+            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Vikram Singh" class="testimonial-card__avatar" />
+            <p class="testimonial-card__quote">Hosted our anniversary dinner here. The candlelight dinner by the pool was the most romantic evening we've had. Truly a world-class hotel.</p>
+            <p class="testimonial-card__name">Vikram Singh</p>
+            <p class="testimonial-card__role">Software Engineer, Pune</p>
+          </div>
+        </div>
+
+        <div class="testimonials__dots" id="testimonial-dots">
+          <button class="testimonials__dot active" data-index="0" aria-label="Testimonial 1"></button>
+          <button class="testimonials__dot" data-index="1" aria-label="Testimonial 2"></button>
+          <button class="testimonials__dot" data-index="2" aria-label="Testimonial 3"></button>
+          <button class="testimonials__dot" data-index="3" aria-label="Testimonial 4"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ========== AWARDS & RECOGNITION ========== -->
+  <section class="awards" id="awards">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-header__label">Recognized Excellence</p>
+        <h2 class="section-header__title">Awards & Partnerships</h2>
+      </div>
+
+      <div class="awards__grid reveal">
+        <div class="award-item">
+          <span class="award-item__icon">🏆</span>
+          <span class="award-item__text">Best Luxury<br>Hotel 2025</span>
+        </div>
+        <div class="award-item">
+          <span class="award-item__icon">⭐</span>
+          <span class="award-item__text">TripAdvisor<br>Top Rated</span>
+        </div>
+        <div class="award-item">
+          <span class="award-item__icon">🌍</span>
+          <span class="award-item__text">World Travel<br>Award Winner</span>
+        </div>
+        <div class="award-item">
+          <span class="award-item__icon">🍃</span>
+          <span class="award-item__text">Green Hotel<br>Certified</span>
+        </div>
+        <div class="award-item">
+          <span class="award-item__icon">🛡️</span>
+          <span class="award-item__text">Forbes Travel<br>Guide Listed</span>
+        </div>
+        <div class="award-item">
+          <span class="award-item__icon">💎</span>
+          <span class="award-item__text">Condé Nast<br>Traveller Pick</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ========== MEET THE TEAM ========== -->
+  <section class="team" id="team">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-header__label">Our People</p>
+        <h2 class="section-header__title">Meet the Team</h2>
+        <p class="section-header__desc">The dedicated professionals who make your stay unforgettable.</p>
+      </div>
+
+      <div class="team__grid stagger-children">
+        <div class="team-card reveal">
+          <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Rajesh Kumar" class="team-card__avatar" />
+          <h3 class="team-card__name">Rajesh Kumar</h3>
+          <p class="team-card__role">General Manager</p>
+          <p class="team-card__bio">20+ years in luxury hospitality, ensuring world-class guest experiences.</p>
+        </div>
+        <div class="team-card reveal">
+          <img src="https://randomuser.me/api/portraits/women/26.jpg" alt="Anita Desai" class="team-card__avatar" />
+          <h3 class="team-card__name">Anita Desai</h3>
+          <p class="team-card__role">Head Chef</p>
+          <p class="team-card__bio">Award-winning chef specializing in fusion cuisine and molecular gastronomy.</p>
+        </div>
+        <div class="team-card reveal">
+          <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Arjun Mehta" class="team-card__avatar" />
+          <h3 class="team-card__name">Arjun Mehta</h3>
+          <p class="team-card__role">Spa Director</p>
+          <p class="team-card__bio">Certified wellness expert with a passion for holistic healing therapies.</p>
+        </div>
+        <div class="team-card reveal">
+          <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Lakshmi Iyer" class="team-card__avatar" />
+          <h3 class="team-card__name">Lakshmi Iyer</h3>
+          <p class="team-card__role">Guest Relations</p>
+          <p class="team-card__bio">Ensures every guest receives personalized attention and premium care.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ========== FAQ ACCORDION ========== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-header__label">Common Questions</p>
+        <h2 class="section-header__title">Frequently Asked Questions</h2>
+        <p class="section-header__desc">Everything you need to know before your visit.</p>
+      </div>
+
+      <div class="faq__list" id="faq-list">
+        <div class="faq-item reveal" data-faq>
+          <button class="faq-item__question" aria-expanded="false">
+            What are the check-in and check-out times?
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">
+              Our standard check-in time is 2:00 PM and check-out is 12:00 PM (noon). Early check-in and late check-out are available upon request, subject to availability. Premium package guests enjoy complimentary late check-out until 2:00 PM.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal" data-faq>
+          <button class="faq-item__question" aria-expanded="false">
+            Do you offer airport pickup and drop service?
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">
+              Yes! We offer complimentary airport transfers for guests booking our Royal Retreat and Honeymoon Suite packages. For other bookings, a luxury sedan can be arranged at ₹1,500 per trip. Simply mention your flight details while booking.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal" data-faq>
+          <button class="faq-item__question" aria-expanded="false">
+            Is the swimming pool open 24/7?
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">
+              Our rooftop infinity pool is open from 6:00 AM to 10:00 PM daily. Lifeguards are on duty during all operating hours. Suite guests have access to a private heated pool available until midnight.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal" data-faq>
+          <button class="faq-item__question" aria-expanded="false">
+            Can I modify or cancel my booking?
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">
+              Bookings can be modified or cancelled up to 48 hours before check-in with no charges. Cancellations within 48 hours will incur a one-night room charge. No-shows will be charged the full booking amount.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal" data-faq>
+          <button class="faq-item__question" aria-expanded="false">
+            Are pets allowed at the hotel?
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">
+              We welcome small pets (under 10kg) in our pet-friendly Standard and Deluxe rooms at an additional charge of ₹500 per night. Please notify us at the time of booking so we can prepare special amenities for your furry companion!
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal" data-faq>
+          <button class="faq-item__question" aria-expanded="false">
+            Do you provide event and banquet facilities?
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">
+              Absolutely! Our Grand Ballroom seats up to 500 guests for weddings, conferences, and special events. We also have a smaller Ivory Hall for intimate gatherings of up to 80 people. Our events team will help you plan every detail.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ========== LOCATION / MAP ========== -->
+  <section class="location" id="location">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-header__label">Find Us</p>
+        <h2 class="section-header__title">Our Location</h2>
+        <p class="section-header__desc">Conveniently located in the heart of the city, minutes from all major attractions.</p>
+      </div>
+
+      <div class="location__wrapper">
+        <div class="location__info reveal-left">
+          <div class="location__detail">
+            <div class="location__detail-icon">📍</div>
+            <div class="location__detail-text">
+              <h4>Address</h4>
+              <p>42 Marine Drive, Colaba<br>Mumbai, Maharashtra 400001</p>
+            </div>
+          </div>
+          <div class="location__detail">
+            <div class="location__detail-icon">📞</div>
+            <div class="location__detail-text">
+              <h4>Reservations</h4>
+              <p>+91 22 6789 1234<br>+91 98765 43210</p>
+            </div>
+          </div>
+          <div class="location__detail">
+            <div class="location__detail-icon">📧</div>
+            <div class="location__detail-text">
+              <h4>Email</h4>
+              <p>reservations@grandivory.com<br>info@grandivory.com</p>
+            </div>
+          </div>
+          <div class="location__detail">
+            <div class="location__detail-icon">🕐</div>
+            <div class="location__detail-text">
+              <h4>Front Desk Hours</h4>
+              <p>24/7 — Always available for you</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="location__map reveal-right">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.0228655459!2d72.8226!3d18.9442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDU2JzM5LjEiTiA3MsKwNDknMjEuNCJF!5e0!3m2!1sen!2sin!4v1700000000000"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="The Grand Ivory Location"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ========== NEWSLETTER ========== -->
+  <section class="newsletter" id="newsletter">
+    <div class="container">
+      <div class="newsletter__content reveal">
+        <p class="section-header__label">Stay Connected</p>
+        <h2 class="section-header__title">Subscribe to Our Newsletter</h2>
+        <p class="section-header__desc">Get exclusive deals, travel tips, and early access to seasonal offers delivered to your inbox.</p>
+
+        <form class="newsletter__form" id="newsletter-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='✅ Subscribed!'; this.querySelector('input').value=''; setTimeout(()=>this.querySelector('button').textContent='Subscribe', 3000);">
+          <input type="email" class="newsletter__input" placeholder="Enter your email address" required />
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <p class="newsletter__privacy">🔒 We respect your privacy. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA BANNER ========== -->
+  <section class="cta-banner" id="cta-banner">
+    <div class="container">
+      <div class="cta-banner__content reveal">
+        <h2 class="cta-banner__title">Ready for an Unforgettable Stay?</h2>
+        <p class="cta-banner__desc">Book now and enjoy exclusive early-bird offers, complimentary spa access, and a welcome drink on arrival.</p>
+        <a href="booking.html" class="btn btn-primary btn-lg">🛎️ Book Now — Special Offer</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__brand">🏨 The Grand Ivory</p>
+      <ul class="footer__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="booking.html">Book a Room</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="cancellation.html">Cancellation Policy</a></li>
+      </ul>
+      <div class="footer__social">
+        <a href="#" aria-label="Facebook">📘</a>
+        <a href="#" aria-label="Instagram">📸</a>
+        <a href="#" aria-label="Twitter">🐦</a>
+        <a href="#" aria-label="YouTube">🎥</a>
+      </div>
+      <p>&copy; 2026 The Grand Ivory Hotel & Resorts. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ========== BACK TO TOP ========== -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script>
+    /* =============================================
+       HOME PAGE SCRIPTS
+       ============================================= */
+
+    // --- Preloader ---
+    window.addEventListener('load', () => {
+      setTimeout(() => document.getElementById('preloader').classList.add('hidden'), 800);
+    });
+
+    // --- Cursor Glow ---
+    const cursorGlow = document.getElementById('cursor-glow');
+    if (window.matchMedia('(hover: hover)').matches) {
+      document.addEventListener('mousemove', (e) => {
+        cursorGlow.style.left = e.clientX + 'px';
+        cursorGlow.style.top  = e.clientY + 'px';
+      });
+    }
+
+    // --- Navbar Scroll ---
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // --- Hamburger Menu ---
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('open');
+      });
+    });
+
+    // --- Scroll Reveal ---
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('revealed');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+      revealObserver.observe(el);
+    });
+
+    // --- Animated Counter ---
+    let countersStarted = false;
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !countersStarted) {
+          countersStarted = true;
+          document.querySelectorAll('.stat-card__number').forEach(counter => {
+            const target = parseInt(counter.dataset.target, 10);
+            const duration = 2000;
+            const start = performance.now();
+            function updateCounter(currentTime) {
+              const elapsed = currentTime - start;
+              const progress = Math.min(elapsed / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              counter.textContent = Math.round(target * eased).toLocaleString();
+              if (progress < 1) requestAnimationFrame(updateCounter);
+              else counter.textContent = target.toLocaleString() + (counter.parentElement.querySelector('.stat-card__label').textContent.includes('%') ? '%' : '+');
+            }
+            requestAnimationFrame(updateCounter);
+          });
+        }
+      });
+    }, { threshold: 0.3 });
+    counterObserver.observe(document.getElementById('stats'));
+
+    // --- Testimonial Slider ---
+    const track = document.getElementById('testimonial-track');
+    const dots  = document.querySelectorAll('.testimonials__dot');
+    let currentSlide = 0;
+    const totalSlides = dots.length;
+
+    function goToSlide(index) {
+      currentSlide = index;
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === index));
+    }
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => goToSlide(parseInt(dot.dataset.index)));
+    });
+
+    setInterval(() => goToSlide((currentSlide + 1) % totalSlides), 5000);
+
+    // --- Back to Top ---
+    const backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 400);
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // --- Typing Effect ---
+    const typingTarget = document.getElementById('typing-target');
+    const words = ['Comfort', 'Luxury', 'Elegance', 'Serenity', 'Paradise'];
+    let wordIndex = 0, charIndex = words[0].length, isDeleting = true;
+
+    function typeEffect() {
+      const currentWord = words[wordIndex];
+      if (isDeleting) {
+        charIndex--;
+        typingTarget.textContent = currentWord.substring(0, charIndex);
+        if (charIndex === 0) { isDeleting = false; wordIndex = (wordIndex + 1) % words.length; setTimeout(typeEffect, 300); return; }
+        setTimeout(typeEffect, 60);
+      } else {
+        charIndex++;
+        typingTarget.textContent = words[wordIndex].substring(0, charIndex);
+        if (charIndex === words[wordIndex].length) { isDeleting = true; setTimeout(typeEffect, 2500); return; }
+        setTimeout(typeEffect, 100);
+      }
+    }
+    setTimeout(typeEffect, 3000);
+
+    // --- Particle Canvas ---
+    const canvas = document.getElementById('particles-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width  = canvas.parentElement.offsetWidth;
+      canvas.height = canvas.parentElement.offsetHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    class Particle {
+      constructor() { this.reset(); }
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 0.5;
+        this.speedX = (Math.random() - 0.5) * 0.3;
+        this.speedY = (Math.random() - 0.5) * 0.3;
+        this.opacity = Math.random() * 0.5 + 0.1;
+      }
+      update() {
+        this.x += this.speedX; this.y += this.speedY;
+        if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(212, 168, 83, ${this.opacity})`;
+        ctx.fill();
+      }
+    }
+
+    for (let i = 0; i < 60; i++) particles.push(new Particle());
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => { p.update(); p.draw(); });
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 120) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(212, 168, 83, ${0.06 * (1 - dist / 120)})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    // --- FAQ Accordion ---
+    document.querySelectorAll('[data-faq]').forEach(item => {
+      const btn = item.querySelector('.faq-item__question');
+      btn.addEventListener('click', () => {
+        // Close all others
+        document.querySelectorAll('[data-faq]').forEach(other => {
+          if (other !== item) other.classList.remove('active');
+        });
+        // Toggle current
+        item.classList.toggle('active');
+        btn.setAttribute('aria-expanded', item.classList.contains('active'));
+      });
+    });
+  </script>
+
+</body>
+</html>

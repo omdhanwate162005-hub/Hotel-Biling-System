@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking Confirmed – The Grand Ivory</title>
+  <meta name="description" content="Your room at The Grand Ivory has been booked successfully. View your booking details and confirmation." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== CONFETTI CANVAS ========== -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- ========== CURSOR GLOW ========== -->
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar__logo">
+        <span class="navbar__logo-icon">🏨</span>
+        The Grand Ivory
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="navbar__links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="booking.html">Book a Room</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cancellation.html">Cancellation Policy</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== CONFIRMATION PAGE ========== -->
+  <main class="confirm-page">
+    <div class="container">
+      <div class="glass-card confirm-card" id="confirm-card">
+
+        <!-- Success Icon -->
+        <div class="confirm__icon">✅</div>
+
+        <h1 class="confirm__title">Booking Confirmed!</h1>
+        <p class="confirm__subtitle">🎉 Your room has been booked successfully!</p>
+
+        <!-- Booking ID -->
+        <div class="confirm__booking-id" id="conf-booking-id">ID: —</div>
+
+        <!-- Details -->
+        <div class="confirm__details" id="confirm-details">
+          <div class="confirm__details-group">
+            <h3>Guest Information</h3>
+            <div class="confirm__row">
+              <span class="confirm__row-label">Name</span>
+              <span class="confirm__row-value" id="conf-name">—</span>
+            </div>
+            <div class="confirm__row">
+              <span class="confirm__row-label">Email</span>
+              <span class="confirm__row-value" id="conf-email">—</span>
+            </div>
+            <div class="confirm__row">
+              <span class="confirm__row-label">Phone</span>
+              <span class="confirm__row-value" id="conf-phone">—</span>
+            </div>
+            <div class="confirm__row">
+              <span class="confirm__row-label">Guests</span>
+              <span class="confirm__row-value" id="conf-guests">—</span>
+            </div>
+          </div>
+
+          <div class="confirm__details-group">
+            <h3>Stay Details</h3>
+            <div class="confirm__row">
+              <span class="confirm__row-label">Room Type</span>
+              <span class="confirm__row-value" id="conf-room">—</span>
+            </div>
+            <div class="confirm__row">
+              <span class="confirm__row-label">Check-in</span>
+              <span class="confirm__row-value" id="conf-checkin">—</span>
+            </div>
+            <div class="confirm__row">
+              <span class="confirm__row-label">Check-out</span>
+              <span class="confirm__row-value" id="conf-checkout">—</span>
+            </div>
+            <div class="confirm__row">
+              <span class="confirm__row-label">Duration</span>
+              <span class="confirm__row-value" id="conf-days">—</span>
+            </div>
+          </div>
+
+          <div class="confirm__details-group">
+            <h3>Selected Amenities</h3>
+            <div class="confirm__row">
+              <span class="confirm__row-label">Amenities</span>
+              <span class="confirm__row-value" id="conf-amenities">—</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Total -->
+        <div class="confirm__total">
+          <span class="confirm__total-label">Total Amount Payable</span>
+          <span class="confirm__total-value" id="conf-total">₹0</span>
+        </div>
+
+        <!-- Actions -->
+        <div class="confirm__actions">
+          <a href="index.html" class="btn btn-primary btn-lg" id="back-home-btn">🏠 Back to Home</a>
+          <a href="booking.html" class="btn btn-secondary btn-lg" id="book-another-btn">📝 Book Another</a>
+          <button class="btn btn-secondary btn-lg" id="print-btn" onclick="window.print()">🖨️ Print Receipt</button>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__brand">🏨 The Grand Ivory</p>
+      <p>&copy; 2026 The Grand Ivory Hotel & Resorts. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script>
+    /* =============================================
+       CONFIRMATION PAGE SCRIPT
+       Reads localStorage, displays data, confetti
+       ============================================= */
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // --- Cursor Glow ---
+      const cursorGlow = document.getElementById('cursor-glow');
+      if (window.matchMedia('(hover: hover)').matches) {
+        document.addEventListener('mousemove', (e) => {
+          cursorGlow.style.left = e.clientX + 'px';
+          cursorGlow.style.top  = e.clientY + 'px';
+        });
+      }
+
+      // --- Mobile Hamburger ---
+      const hamburger = document.getElementById('hamburger');
+      const navLinks  = document.getElementById('nav-links');
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('open');
+      });
+
+      // --- Retrieve Data ---
+      const data = JSON.parse(localStorage.getItem('bookingData'));
+
+      if (!data) {
+        document.getElementById('confirm-card').innerHTML = `
+          <div class="confirm__icon" style="background:var(--error-bg);border-color:var(--error);">❌</div>
+          <h1 class="confirm__title">No Booking Found</h1>
+          <p class="confirm__subtitle" style="color:var(--text-secondary);">
+            It looks like you haven't made a booking yet.
+          </p>
+          <div class="confirm__actions" style="margin-top:2rem;">
+            <a href="booking.html" class="btn btn-primary btn-lg">📝 Make a Booking</a>
+          </div>
+        `;
+        return;
+      }
+
+      // --- Helpers ---
+      const formatDate = (dateStr) => {
+        const options = { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' };
+        return new Date(dateStr).toLocaleDateString('en-IN', options);
+      };
+
+      const formatCurrency = (amount) => '₹' + Number(amount).toLocaleString('en-IN');
+
+      const roomNames = {
+        standard: 'Standard Room — ₹1,000/night',
+        deluxe:   'Deluxe Room — ₹2,000/night',
+        suite:    'Suite Room — ₹3,500/night',
+      };
+
+      // --- Generate Booking ID ---
+      const bookingId = 'TGI-' + Date.now().toString(36).toUpperCase() + '-' + Math.random().toString(36).substring(2, 6).toUpperCase();
+      document.getElementById('conf-booking-id').textContent = 'Booking ID: ' + bookingId;
+
+      // --- Populate ---
+      document.getElementById('conf-name').textContent   = data.fullName;
+      document.getElementById('conf-email').textContent  = data.email;
+      document.getElementById('conf-phone').textContent  = data.phone;
+      document.getElementById('conf-guests').textContent = data.guests;
+
+      document.getElementById('conf-room').textContent     = roomNames[data.roomType] || data.roomType;
+      document.getElementById('conf-checkin').textContent   = formatDate(data.checkin);
+      document.getElementById('conf-checkout').textContent  = formatDate(data.checkout);
+      document.getElementById('conf-days').textContent      = data.days + (data.days === 1 ? ' Night' : ' Nights');
+
+      const amenitiesEl = document.getElementById('conf-amenities');
+      amenitiesEl.textContent = (data.amenities && data.amenities.length > 0)
+        ? data.amenities.join(', ')
+        : 'None selected';
+
+      document.getElementById('conf-total').textContent = formatCurrency(data.totalPrice);
+
+      // =============================================
+      // CONFETTI ANIMATION 🎊
+      // =============================================
+      const canvas = document.getElementById('confetti-canvas');
+      const ctx    = canvas.getContext('2d');
+
+      function resizeCanvas() {
+        canvas.width  = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
+      const confettiColors = [
+        '#d4a853', '#e8c97a', '#4a8fe7', '#3ecfb4',
+        '#f25c5c', '#4ecf6e', '#ff6b9d', '#c084fc'
+      ];
+
+      class Confetti {
+        constructor() { this.reset(true); }
+        reset(initial = false) {
+          this.x = Math.random() * canvas.width;
+          this.y = initial ? Math.random() * -canvas.height : -20;
+          this.size = Math.random() * 8 + 4;
+          this.speedY = Math.random() * 3 + 2;
+          this.speedX = (Math.random() - 0.5) * 4;
+          this.rotation = Math.random() * 360;
+          this.rotSpeed = (Math.random() - 0.5) * 10;
+          this.color = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+          this.opacity = Math.random() * 0.6 + 0.4;
+          this.shape = Math.random() > 0.5 ? 'rect' : 'circle';
+        }
+        update() {
+          this.y += this.speedY;
+          this.x += this.speedX;
+          this.rotation += this.rotSpeed;
+          if (this.y > canvas.height + 20) this.reset();
+        }
+        draw() {
+          ctx.save();
+          ctx.translate(this.x, this.y);
+          ctx.rotate((this.rotation * Math.PI) / 180);
+          ctx.globalAlpha = this.opacity;
+          ctx.fillStyle = this.color;
+
+          if (this.shape === 'rect') {
+            ctx.fillRect(-this.size / 2, -this.size / 4, this.size, this.size / 2);
+          } else {
+            ctx.beginPath();
+            ctx.arc(0, 0, this.size / 2, 0, Math.PI * 2);
+            ctx.fill();
+          }
+          ctx.restore();
+        }
+      }
+
+      const confettiPieces = [];
+      for (let i = 0; i < 150; i++) confettiPieces.push(new Confetti());
+
+      let confettiFrame = 0;
+      const maxFrames = 300; // ~5 seconds at 60fps
+
+      function animateConfetti() {
+        confettiFrame++;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Fade out confetti gradually
+        const fadeStart = maxFrames * 0.7;
+        const globalFade = confettiFrame > fadeStart
+          ? 1 - (confettiFrame - fadeStart) / (maxFrames - fadeStart)
+          : 1;
+
+        ctx.globalAlpha = globalFade;
+
+        confettiPieces.forEach(c => { c.update(); c.draw(); });
+
+        if (confettiFrame < maxFrames) {
+          requestAnimationFrame(animateConfetti);
+        } else {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          canvas.style.display = 'none';
+        }
+      }
+
+      animateConfetti();
+    });
+  </script>
+
+</body>
+</html>

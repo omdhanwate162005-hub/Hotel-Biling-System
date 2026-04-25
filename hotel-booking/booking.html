@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Room – The Grand Ivory</title>
+  <meta name="description" content="Reserve your luxury room at The Grand Ivory. Choose from Standard, Deluxe, or Suite rooms and customize your stay with premium amenities." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== PRELOADER ========== -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__spinner"></div>
+    <p class="preloader__text">The Grand Ivory</p>
+  </div>
+
+  <!-- ========== CURSOR GLOW ========== -->
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+  <!-- ========== TOAST CONTAINER ========== -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar__logo">
+        <span class="navbar__logo-icon">🏨</span>
+        The Grand Ivory
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="navbar__links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="booking.html" class="active">Book a Room</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cancellation.html">Cancellation Policy</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== BOOKING PAGE ========== -->
+  <main class="booking-page">
+    <div class="container">
+
+      <!-- Page Header -->
+      <div class="booking-page__header reveal">
+        <div class="hero__badge" style="margin-bottom:1rem;">🛎️ Reservation</div>
+        <h1 class="hero__title" style="font-size:clamp(1.8rem,4vw,2.8rem);">
+          Reserve Your <span>Stay</span>
+        </h1>
+        <p>Fill in the details below to book your room at The Grand Ivory.</p>
+      </div>
+
+      <!-- ===== PROGRESS STEPS ===== -->
+      <div class="progress-steps reveal" id="progress-steps">
+        <div class="progress-step active" id="step-1">
+          <span class="progress-step__circle">1</span>
+          <span>Guest Info</span>
+        </div>
+        <div class="progress-step__line" id="line-1"></div>
+        <div class="progress-step" id="step-2">
+          <span class="progress-step__circle">2</span>
+          <span>Dates</span>
+        </div>
+        <div class="progress-step__line" id="line-2"></div>
+        <div class="progress-step" id="step-3">
+          <span class="progress-step__circle">3</span>
+          <span>Room</span>
+        </div>
+        <div class="progress-step__line" id="line-3"></div>
+        <div class="progress-step" id="step-4">
+          <span class="progress-step__circle">4</span>
+          <span>Confirm</span>
+        </div>
+      </div>
+
+      <!-- ========== BOOKING FORM ========== -->
+      <form class="booking-form" id="booking-form" novalidate>
+
+        <!-- ===== SECTION A: Guest Details ===== -->
+        <div class="glass-card form-section reveal" id="section-guest">
+          <h2 class="form-section__title">
+            <span class="icon">👤</span> Guest Details
+          </h2>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fullName">Full Name <span class="required">*</span></label>
+              <input type="text" id="fullName" class="form-input" placeholder="e.g. Rahul Sharma" autocomplete="name" />
+              <div class="error-msg" id="fullName-error">⚠ Full name is required</div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address <span class="required">*</span></label>
+              <input type="email" id="email" class="form-input" placeholder="e.g. rahul@email.com" autocomplete="email" />
+              <div class="error-msg" id="email-error">⚠ Enter a valid email address</div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="phone" class="form-input" placeholder="e.g. 9876543210" maxlength="10" autocomplete="tel" />
+              <div class="error-msg" id="phone-error">⚠ Enter a valid 10-digit phone number</div>
+            </div>
+            <div class="form-group">
+              <label for="guests">Number of Guests <span class="required">*</span></label>
+              <input type="number" id="guests" class="form-input" placeholder="e.g. 2" min="1" max="10" />
+              <div class="error-msg" id="guests-error">⚠ Enter a valid number of guests (1-10)</div>
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="address">Address</label>
+            <textarea id="address" class="form-textarea" placeholder="Your full address (optional)"></textarea>
+          </div>
+        </div>
+
+        <!-- ===== SECTION B: Booking Dates ===== -->
+        <div class="glass-card form-section reveal" id="section-dates">
+          <h2 class="form-section__title">
+            <span class="icon">📅</span> Booking Dates
+          </h2>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="checkin">Check-in Date <span class="required">*</span></label>
+              <input type="date" id="checkin" class="form-input" />
+              <div class="error-msg" id="checkin-error">⚠ Check-in date cannot be in the past</div>
+            </div>
+            <div class="form-group">
+              <label for="checkout">Check-out Date <span class="required">*</span></label>
+              <input type="date" id="checkout" class="form-input" />
+              <div class="error-msg" id="checkout-error">⚠ Check-out must be after check-in date</div>
+            </div>
+          </div>
+
+          <div id="day-count" style="text-align:center; color:var(--gold); font-weight:600; margin-top:0.5rem; font-size:0.95rem; display:none;">
+            📆 <span id="day-count-text"></span>
+          </div>
+        </div>
+
+        <!-- ===== SECTION C: Room Selection ===== -->
+        <div class="glass-card form-section reveal" id="section-room">
+          <h2 class="form-section__title">
+            <span class="icon">🛏️</span> Select Your Room
+          </h2>
+
+          <div class="room-options">
+            <div class="room-option">
+              <input type="radio" name="roomType" id="room-standard" value="standard" data-price="1000" />
+              <label for="room-standard" class="room-option__label">
+                <div class="room-option__icon">🛏️</div>
+                <div class="room-option__name">Standard Room</div>
+                <div class="room-option__price">₹1,000 <span>/night</span></div>
+              </label>
+            </div>
+            <div class="room-option">
+              <input type="radio" name="roomType" id="room-deluxe" value="deluxe" data-price="2000" />
+              <label for="room-deluxe" class="room-option__label">
+                <div class="room-option__icon">🌟</div>
+                <div class="room-option__name">Deluxe Room</div>
+                <div class="room-option__price">₹2,000 <span>/night</span></div>
+              </label>
+            </div>
+            <div class="room-option">
+              <input type="radio" name="roomType" id="room-suite" value="suite" data-price="3500" />
+              <label for="room-suite" class="room-option__label">
+                <div class="room-option__icon">👑</div>
+                <div class="room-option__name">Suite Room</div>
+                <div class="room-option__price">₹3,500 <span>/night</span></div>
+              </label>
+            </div>
+          </div>
+
+          <div class="error-msg" id="room-error" style="margin-top:0.8rem;">⚠ Please select a room type</div>
+        </div>
+
+        <!-- ===== SECTION D: Amenities ===== -->
+        <div class="glass-card form-section reveal" id="section-amenities">
+          <h2 class="form-section__title">
+            <span class="icon">✨</span> Add-on Amenities
+          </h2>
+
+          <div class="amenities-grid">
+            <div class="amenity-item">
+              <input type="checkbox" id="amenity-ac" value="AC" data-price="500" />
+              <label for="amenity-ac" class="amenity-item__label">
+                <span class="amenity-item__check">✓</span>
+                <span class="amenity-item__icon">❄️</span>
+                <span class="amenity-item__info"><span>AC</span><span class="amenity-item__price">₹500</span></span>
+              </label>
+            </div>
+            <div class="amenity-item">
+              <input type="checkbox" id="amenity-wifi" value="WiFi" data-price="200" />
+              <label for="amenity-wifi" class="amenity-item__label">
+                <span class="amenity-item__check">✓</span>
+                <span class="amenity-item__icon">📶</span>
+                <span class="amenity-item__info"><span>WiFi</span><span class="amenity-item__price">₹200</span></span>
+              </label>
+            </div>
+            <div class="amenity-item">
+              <input type="checkbox" id="amenity-breakfast" value="Breakfast" data-price="300" />
+              <label for="amenity-breakfast" class="amenity-item__label">
+                <span class="amenity-item__check">✓</span>
+                <span class="amenity-item__icon">🍳</span>
+                <span class="amenity-item__info"><span>Breakfast</span><span class="amenity-item__price">₹300</span></span>
+              </label>
+            </div>
+            <div class="amenity-item">
+              <input type="checkbox" id="amenity-parking" value="Parking" data-price="150" />
+              <label for="amenity-parking" class="amenity-item__label">
+                <span class="amenity-item__check">✓</span>
+                <span class="amenity-item__icon">🅿️</span>
+                <span class="amenity-item__info"><span>Parking</span><span class="amenity-item__price">₹150</span></span>
+              </label>
+            </div>
+            <div class="amenity-item">
+              <input type="checkbox" id="amenity-pool" value="Swimming Pool" data-price="400" />
+              <label for="amenity-pool" class="amenity-item__label">
+                <span class="amenity-item__check">✓</span>
+                <span class="amenity-item__icon">🏊</span>
+                <span class="amenity-item__info"><span>Swimming Pool</span><span class="amenity-item__price">₹400</span></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== SECTION E: Price Summary ===== -->
+        <div class="glass-card form-section" id="price-summary-section" style="display:none;">
+          <h2 class="form-section__title">
+            <span class="icon">💰</span> Price Breakdown
+          </h2>
+
+          <div class="price-summary">
+            <div class="price-summary__row">
+              <span>Room Charge</span>
+              <span id="summary-room">₹0</span>
+            </div>
+            <div class="price-summary__row">
+              <span>× Number of Nights</span>
+              <span id="summary-nights">0 nights</span>
+            </div>
+            <div class="price-summary__row">
+              <span>Room Subtotal</span>
+              <span id="summary-room-total">₹0</span>
+            </div>
+            <div class="price-summary__row">
+              <span>Amenities Charges</span>
+              <span id="summary-amenities">₹0</span>
+            </div>
+            <div class="price-summary__row price-summary__row--total">
+              <span>Total Amount</span>
+              <span id="summary-total">₹0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary btn-lg" id="submit-btn">
+            🛎️ Confirm Booking
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__brand">🏨 The Grand Ivory</p>
+      <p>&copy; 2026 The Grand Ivory Hotel & Resorts. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ========== BACK TO TOP ========== -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script src="script.js"></script>
+
+</body>
+</html>
