@@ -1,0 +1,4 @@
+node_modules/
+dist/
+hotel-booking/dist/
+.env
